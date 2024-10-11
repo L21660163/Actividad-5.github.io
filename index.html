@@ -69,8 +69,8 @@
     <div class="container">
         <h1>Contador</h1>
         <div id="contador" class="counter">0</div>
-        <button id="subir"><i class="fas fa-arrow-up icon"></i> subirparriba</button>
-        <button id="bajar"><i class="fas fa-arrow-down icon"></i> bajarpabajo</button>
+        <button id="subir">subirparriba<i class="fas fa-arrow-up icon"></i> subirparriba</button>
+        <button id="bajar">bajarpabajo<i class="fas fa-arrow-down icon"></i> bajarpabajo</button>
     </div>
 
     <script>
@@ -87,8 +87,8 @@
         const bajarpabajo = document.getElementById("bajar");
 
         // Asignamos los textos de los botones a partir de las variables
-        subirparriba.textContent = subirparriba;
-        bajarpabajo.textContent = bajarpabajo;
+        subirparriba.textContent = subirTexto;
+        bajarpabajo.textContent = bajarTexto;
 
         // Evento para aumentar el contador
         subirparriba.addEventListener("click", () => {
