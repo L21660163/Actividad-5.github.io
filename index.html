@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador con Variables y Eventos</title>
+    <!-- Enlace a Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos del body */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #b3cde0, #f6f9fc); /* Degradado de fondo suave */
+            color: #2a2a2a; /* Color del texto */
+            margin: 0; /* Eliminar márgenes */
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px; /* Bordes redondeados */
+            background: rgba(255, 255, 255, 0.9); /* Fondo más claro y semitransparente */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra suave */
+        }
+
+        .counter {
+            font-size: 3rem; /* Tamaño del contador */
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.2rem;
+            border: none; /* Sin borde */
+            border-radius: 8px; /* Bordes redondeados */
+            cursor: pointer; /* Cambiar el cursor al pasar el ratón */
+            transition: background 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+            color: white; /* Texto blanco */
+            display: flex; /* Para alinear icono y texto */
+            align-items: center; /* Centrar verticalmente */
+            justify-content: center; /* Centrar horizontalmente */
+        }
+
+        #subir {
+            background: #77c9d4; /* Color suave para el botón subir */
+        }
+
+        #bajar {
+            background: #56a5b1; /* Color suave para el botón bajar */
+        }
+
+        button:hover {
+            transform: translateY(-2px); /* Efecto de elevación al pasar el cursor */
+            opacity: 0.9; /* Efecto de opacidad al hacer hover */
+        }
+
+        /* Estilos para el icono */
+        .icon {
+            margin-right: 8px; /* Espacio entre el icono y el texto */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contador</h1>
+        <div id="contador" class="counter">0</div>
+        <button id="subir"><i class="fas fa-arrow-up icon"></i> subirparriba</button>
+        <button id="bajar"><i class="fas fa-arrow-down icon"></i> bajarpabajo</button>
+    </div>
+
+    <script>
+        // Inicializamos el contador en 0
+        let contador = 0;
+
+        // Definimos las variables para los botones y los textos
+        const subirTexto = "subirparriba";
+        const bajarTexto = "bajarpabajo";
+
+        // Referencias a los elementos del DOM
+        const contadorDisplay = document.getElementById("contador");
+        const subirparriba = document.getElementById("subir");
+        const bajarpabajo = document.getElementById("bajar");
+
+        // Asignamos los textos de los botones a partir de las variables
+        subirparriba.textContent = subirTexto;
+        bajarpabajo.textContent = bajarTexto;
+
+        // Evento para aumentar el contador
+        subirparriba.addEventListener("click", () => {
+            contador++; // Incrementamos el contador
+            actualizarContador(); // Actualizamos la visualización del contador
+        });
+
+        // Evento para disminuir el contador
+        bajarpabajo.addEventListener("click", () => {
+            contador--; // Decrementamos el contador
+            actualizarContador(); // Actualizamos la visualización del contador
+        });
+
+        // Función para actualizar el contador en el DOM
+        function actualizarContador() {
+            contadorDisplay.textContent = contador;
+        }
+    </script>
+</body>
+</html>
